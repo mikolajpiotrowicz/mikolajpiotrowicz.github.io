@@ -1,6 +1,73 @@
-body
-  background-color: red
+@import vendors/all.css
 
-.cipka
-  &_miekka
-    color: pink
+
+$lime-green: #7dce94
+$dark-grey: #3d3d3f
+$vanilla-grey: #f6f5f3
+$white: #f9f8fd
+
+.anim-typewriter
+  animation: typewriter 2s steps(18, end) 1s 1 normal both, blink-caret .75s step-end infinite
+
+@keyframes typewriter
+  from
+    width: 0
+  to
+    width: 505px
+
+@keyframes blink-caret
+  from, to
+    border-color: transparent
+  50%
+    border-color: $lime-green
+
+html, body
+  background-color: $white
+  font-family: Ubuntu
+  height: 100%
+  overflow: hidden
+  margin: 0
+
+.container
+  position: relative
+  width: 100%
+  height: 100%
+.title
+  position: absolute
+  transform: translate(0, -50%)
+  left: 50px
+  top: 50%
+  color: $dark-grey
+  &__undeline
+    animation: typewriter 2s
+    animation-fill-mode: both
+    animation-delay: 2.5s
+    border-bottom: 3px solid $lime-green
+    content: ""
+  &__name
+    font-size: 56px
+    margin: 0 auto
+    border-right: 2px solid rgba(255,255,255,.75)
+    text-align: left
+    white-space: nowrap
+    overflow: hidden
+    transform: translateY(-50%)
+    border-right: 3px solid orangered
+
+.social
+  position: absolute
+  bottom: 0
+  right: 30px
+  &__list
+    list-style-type: none
+    display: flex
+    font-size: 30px
+  &__item:not(:first-child), &__item:not(:last-child)
+      margin: 0 10px
+  &__link
+    color: $lime-green
+
+.social-animation-setup
+  animation-fill-mode: both
+  animation-duration: 3s
+  animation-delay: 1s
