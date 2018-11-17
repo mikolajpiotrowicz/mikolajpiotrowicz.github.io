@@ -19,7 +19,7 @@ $white: #f9f8fd
   from, to
     border-color: transparent
   50%
-    border-color: $lime-green
+    border-color: $white
 
 html, body
   background-color: $white
@@ -42,8 +42,9 @@ html, body
     animation: typewriter 2s
     animation-fill-mode: both
     animation-delay: 2.5s
-    border-bottom: 3px solid $lime-green
+    border-bottom: 3px solid $white
     content: ""
+    margin-top: -20px
   &__name
     font-size: 56px
     margin: 0 auto
@@ -62,12 +63,54 @@ html, body
     list-style-type: none
     display: flex
     font-size: 30px
+  &__list:first-child
+    i:hover
+      + .about-me-trigger__tooltip
+        opacity: 1
+        transform: translate(0, -100%) scale(1)
   &__item:not(:first-child), &__item:not(:last-child)
       margin: 0 10px
   &__link
-    color: $lime-green
+    color: $white
+.about-me-trigger
+  display: inline-block
+  position: relative
+  &__tooltip
+    opacity: 0
+    transition: 1s all
+    font-size: 14px
+    background-color: $dark-grey
+    color: $vanilla-grey
+    text-align: center
+    white-space: nowrap
+    padding: 5px 10px
+    border-radius: 6px
+    position: absolute
+    z-index: 1
+    transform: translate(0, -100%) scale(0)
+    right: -66%
+    top: -10px
 
 .social-animation-setup
   animation-fill-mode: both
   animation-duration: 3s
   animation-delay: 1s
+
+.grow
+  transition: all .2s ease-in-out
+.grow:hover
+  transform: scale(1.15)
+
+
+.about-me
+  position: absolute
+  right: 100px
+  top: 50%
+  transform: translateY(-50%)
+  &__title
+    color: $white
+    font-weight: bold
+
+.about-animation-setup
+  animation-fill-mode: both
+  animation-duration: 1.5s

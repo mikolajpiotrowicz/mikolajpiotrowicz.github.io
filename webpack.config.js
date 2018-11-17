@@ -30,16 +30,19 @@ module.exports = {
     },
     module: {
         rules: [
-            { test: /\.(png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000' }
-            ,{
-            test:  /\.(css|sass)$/,
-            use: [{
-                loader: MiniCssExtractPlugin.loader,
-                options: {
-                    // you can specify a publicPath here
-                    // by default it use publicPath in webpackOptions.output
-                    outputPath: 'build'
-                }
+            {
+                test: /\.(png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000'
+            }
+            ,
+            {
+                test:  /\.(css|sass)$/,
+                use: [{
+                    loader: MiniCssExtractPlugin.loader,
+                    options: {
+                        // you can specify a publicPath here
+                        // by default it use publicPath in webpackOptions.output
+                        outputPath: 'build'
+                    }
             }, {
                 loader: "css-loader",
                 options: {
